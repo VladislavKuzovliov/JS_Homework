@@ -1,7 +1,7 @@
 function divideArr(array,subArrayLength){
 var newDivide=[];
 
-    array.map(function (item,i) {
+    array.forEach(function (item,i) {
         if ((i+1)%subArrayLength==0){
             newDivide[(i+1)/subArrayLength-1]=array.slice((i+1-subArrayLength),i+1);
         }

@@ -1,20 +1,17 @@
 function divideArr(array,subArrayLength){
 var newDivide=[];
 
-    array.forEach(function (item,i) {
-        if ((i+1)%3==0){
-
+    array.map(function (item,i) {
+        if ((i+1)%subArrayLength==0){
+            newDivide[(i+1)/subArrayLength-1]=array.slice((i+1-subArrayLength),i+1);
         }
-    })
-
-    // var newDivide = array.map(function (item,i) {
-    //     if (i%3==0){
-    //
-    //     }
-    // });
-    console.log(newDivide);
+    });
+     if ((array.length)%subArrayLength!=0){
+         newDivide[newDivide.length]=array.slice((array.length-(array.length%subArrayLength)),array.length);
+     }
+return newDivide;
 }
 
 
-// divideArr([1, 2, 3, 4], 2); // [[1, 2], [3, 4]]
-// divideArr([1, 2, 3, 4, 5, 6, 7, 8], 3); // [[1, 2, 3], [4, 5, 6], [7, 8]]
+console.log(divideArr([1, 2, 3, 4], 2)); // [[1, 2], [3, 4]]
+console.log(divideArr([1, 2, 3, 4, 5, 6, 7, 8], 3)); // [[1, 2, 3], [4, 5, 6], [7, 8]]

@@ -11,19 +11,14 @@ console.log(filterNumbersArr([-1, 0, 2, 34, -2]));
 
 //ЗАДАНИЕ 2
 function firstPositive(array) {
-    var position = -1;
 
-    array.some(function (item) {
-        position++;
+    return array.find(function (item) {
         return item > 0;
     });
 
-    return array[position];
 }
 
 console.log(firstPositive([-1, 0, 22, 34, -2]));
-//Искренне не понимаю, какой есть более подходящий для этой задачи перебирающий метод.
-//some останавливает перебор при первом соответствующем условию элементе массива. Это то, что нужно. Или нет?
 
 
 //ЗАДАНИЕ 3

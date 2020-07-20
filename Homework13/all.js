@@ -1,32 +1,30 @@
 //ЗАДАНИЙ 1
 function toNamesObjectArray(nameArray) {
-    var namesObj = [];
 
-    nameArray.forEach(function (item, i) {
-        namesObj[i] = {name: item};
+    nameArray.map(function (item,i,array) {
+        array[i] = {name: item};
     });
 
-    return namesObj;
+    return nameArray;
 
 }
 
-//console.log(toNamesObjectArray(['Victor','Abraham','Wolfgang']));
+console.log(toNamesObjectArray(['Victor', 'Abraham', 'Wolfgang']));
 
 
 
 //ЗАДАНИЕ 2
 function toCurrentTime(timeArray) {
-    var currentTime = 'Текущее время';
 
-    timeArray.forEach(function (item) {
-        currentTime += ' : ' + item;
-    });
+    return timeArray.reduce(function (sum, item) {
 
-    return currentTime;
+        return sum + ' : ' + item;
+
+    }, 'Текущее время');
 
 }
 
-// console.log(toCurrentTime(['00', '13', '24']));
+console.log(toCurrentTime(['00', '13', '24']));
 
 
 

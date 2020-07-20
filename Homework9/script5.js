@@ -1,34 +1,37 @@
 function Animal(name) {
-    self = this;
+    var self = this;
     this.name = name;
     var foodAmount = 50;
+
     function formatFoodAmount() {
-        return foodAmount + 'гр.'
+        return foodAmount + 'гр.';
     }
 
     this.dailyNorm = function (amount) {
-        if (!arguments.length) return formatFoodAmount();
+        if (!arguments.length) console.log(formatFoodAmount());
         else {
-            if (amount <= 500 && amount >= 50 && (!isNaN(amount) && (+amount != 0 || amount == 0))) {
+            if (amount > 500) {
+                console.log ('Слишком много корма.');
+            } else if (typeof amount !=null && amount !== '' && amount < 50) {
+                console.log ('Слишком мало корма.');
+            } else if (typeof amount != "number") {
+                console.log ('Неверно введено количество корма.');
+            } else if (amount <= 500 && amount >= 50 && (!isNaN(amount) && (+amount != 0 || amount == 0))) {
                 foodAmount = amount;
             }
-            else {
-                return ('Мало корма/Много корма/Неверные данные!')
-            }
+
         }
     }
-    this.animalFeed = function () {
+    this.feed = function () {
         console.log('Насыпаем в миску ' + self.dailyNorm() + ' корма.');
     }
-
 }
 
 function Cat() {
     Animal.apply(this, arguments);
-
-    var feed = this.animalFeed;
-    this.animalFeed = function () {
-        feed();
+    var animalFeed = this.feed;
+    this.feed = function () {
+        animalFeed();
         console.log('Кот доволен ^^');
         return this;
     }
@@ -40,4 +43,6 @@ function Cat() {
 
 var cad = new Cat('Bars');
 cad.dailyNorm(170);
-cad.stroke().stroke().animalFeed().stroke().animalFeed().animalFeed();
+cad.dailyNorm(900);
+cad.dailyNorm();
+cad.stroke().stroke().feed().stroke().feed().feed();

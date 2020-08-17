@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: initial;
+}
+
+table {
+    width: 40em;
+    margin: 20px;
+    border-collapse: collapse;
+    font-family: Arial;
+}
+
+td {
+    width: 200px;
+    height: 40px;
+    padding: 0.3em;
+    border: 1px solid black;
+    cursor: text;
+}
+
+#add-row, #delete-row {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+}
+
+input {
+    font: inherit;
+    width: 98%;
+    height: 98%;
+}
+
+input:focus {
+    outline-color: lightgray;
+}

@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: initial;
+}
+
+table {
+    margin: 20px;
+    border-collapse: collapse;
+    font-family: Arial;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    cursor: wait;
+}
+.black-cell{
+    background-color: black;
+}
+
+#create-button {
+    text-align: center;
+    font-size: large;
+    cursor: pointer;
+}
+
+input {
+    width: 3em;
+}
+
+.x{
+    padding-left: 50px;
+}

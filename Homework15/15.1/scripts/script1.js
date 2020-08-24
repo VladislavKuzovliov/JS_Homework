@@ -3,17 +3,18 @@ var tableCreateButton = document.getElementById('create-button');
 var x = document.getElementById('x');
 var y = document.getElementById('y');
 var buttonStateChange = function () {
-    tableCreateButton.disabled = y.value == null || x.value == null;
+    tableCreateButton.disabled = y.value == 0 || x.value == 0;
 }
 var colorToggle = function () {
-    tdList=document.getElementsByTagName('TD');
-    for (var i in tdList){
+    tdList = document.getElementsByTagName('TD');
+    for (var i in tdList) {
         tdList[i].classList.toggle('black-cell');
     }
 }
 
 
-document.addEventListener('keyup', buttonStateChange, false);
+x.addEventListener('keyup', buttonStateChange, false);
+y.addEventListener('keyup', buttonStateChange, false);
 chessTableBody.addEventListener('click', colorToggle, false);
 
 tableCreateButton.onclick = function () {
@@ -31,6 +32,6 @@ tableCreateButton.onclick = function () {
             chessTableBody.append(tableRow);
         }
     } else {
-        alert('An error occured!\rIncorrect value is entered. (0 to 10 expected)');
+        alert('An error occurred!\rIncorrect value is entered. (0 to 10 expected)');
     }
 }

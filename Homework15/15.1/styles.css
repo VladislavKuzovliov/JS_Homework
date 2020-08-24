@@ -17,7 +17,7 @@ td {
     width: 50px;
     height: 50px;
     border: 1px solid black;
-    cursor: wait;
+    cursor: pointer;
 }
 .black-cell{
     background-color: black;
